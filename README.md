@@ -10,6 +10,9 @@ Data visualization was performed using Microsoft Power BI.
 ![Power BI Dashboard - Home Page](https://github.com/rastewu/Papa-Jays-Pizza-Sales/assets/157243480/c4fa4c97-f4c7-42b5-afe6-112ed4af3706)
 
 
+![Power Bi DashBoard - Top Bottom Sellers](https://github.com/rastewu/Papa-Jays-Pizza-Sales/assets/157243480/f683efb5-a88d-4b69-af66-b40e283f7cfd)
+
+
 
 
 
