@@ -69,3 +69,116 @@ QUESTIONS TO ANSWER
 5.	Total Pizzas Sold by Pizza Category
 6.	Top 5 Best Sellers by Total Pizzas Sold
 7.	Bottom 5 Worst Sellers by Total Pizzas Sold
+
+ ### Queries Used 
+### KPIs
+ ```sql
+--1) Total Revenue (How much money did we make this year?)
+SELECT round(SUM(Quantity*Price),2) AS TotalRevenue
+FROM Pizza_Sales..order_details od
+JOIN Pizza_Sales..pizzas p
+ON od.pizza_id=p.pizza_id
+ 
+
+--2)Avera ge Order Value
+--total order value/order count
+SELECT round(SUM(quantity*price)/COUNT(DISTINCT od.order_id),2) AS [Average Order Value]
+FROM Pizza_Sales..order_details od
+JOIN Pizza_Sales..pizzas p
+ON od.pizza_id=p.pizza_id
+
+--3) Total Pizzas Sold
+SELECT SUM(Quantity) AS [Total Pizzas Sold]
+FROM Pizza_Sales..order_details
+
+--4)	Total Orders
+SELECT COUNT(DISTINCT Order_Id) AS [Total Orders]
+FROM Pizza_Sales..orders
+
+--5) Average Pizzas per Order
+--pizzas sold/number of pizzas
+SELECT SUM(Quantity)/COUNT(DISTINCT order_id) AS [Average Pizzas Per Order]
+FROM Pizza_Sales..order_details
+
+
+--QUESTIONS TO ANSWER
+--1) Daily Trends for Total Orders
+--select * from Pizza_Sales..orders
+SELECT FORMAT(date, 'ddd') AS DayOfWeek, COUNT(DISTINCT order_id) AS  Total_Orders 
+FROM Pizza_Sales..orders
+GROUP BY FORMAT(date, 'ddd')
+ORDER BY Total_Orders DESC
+ 
+
+--2) Hourly Trend for Total Orders
+--Select * from Pizza_Sales..orders
+SELECT DATEPART(HOUR,time) AS [Hour], COUNT(DISTINCT order_id) AS CountOfOrders
+FROM Pizza_Sales..orders
+GROUP BY DATEPART(HOUR,time)
+ORDER BY [Hour]  
+
+--3) Percentage of Sales by Pizza Category
+--a: calculate total revenue by Category
+--% of Sales as (a:/total revenue)*100
+
+SELECT
+	category,
+	SUM(quantity*Price) AS Revenue,
+	ROUND((SUM(quantity*Price)*100/(
+		SELECT SUM(quantity*Price) 
+		FROM order_details od
+		JOIN pizzas p ON od.pizza_id=p.pizza_id)
+	),2) AS PercentageOfSales
+FROM order_details od
+JOIN pizzas p ON od.pizza_id=p.pizza_id
+JOIN pizza_types pt ON p.pizza_type_id=pt.pizza_type_id
+GROUP BY category
+ORDER BY PercentageOfSales DESC
+
+--4)	Percentage of Sales by Pizza Size
+SELECT 
+	size
+	,ROUND(SUM(od.quantity*p.price),2) AS Sales
+	,ROUND(SUM(od.quantity*p.price)*100/(SELECT SUM(quantity*price)  
+	 FROM order_details od
+	JOIN pizzas p ON od.pizza_id=p.pizza_id),2) as PercentageOfSalesByPizzaSize
+	 FROM order_details od
+	 JOIN pizzas p ON od.pizza_id=p.pizza_id  
+	 GROUP BY size
+	 ORDER BY Sales DESC
+
+--5) Total Pizzas Sold by Pizza Category
+SELECT 
+	category
+	,SUM(quantity) TotalPizzasSold 
+FROM order_details od
+JOIN pizzas p ON od.pizza_id=p.pizza_id
+JOIN pizza_types pt ON p.pizza_type_id=pt.pizza_type_id
+GROUP BY category
+ORDER BY TotalPizzasSold DESC
+
+
+--6) Top 5 Best Sellers by Total Pizzas Sold
+SELECT TOP 5
+	name
+	,SUM(quantity) TotalPizzasSold 
+FROM order_details od
+JOIN pizzas p ON od.pizza_id=p.pizza_id
+JOIN pizza_types pt ON p.pizza_type_id=pt.pizza_type_id
+GROUP BY name
+ORDER BY TotalPizzasSold DESC
+
+
+--7) Bottom 5 Worst Sellers by Total Pizzas Sold
+SELECT TOP 5
+	name
+	,SUM(quantity) TotalPizzasSold 
+FROM order_details od
+JOIN pizzas p ON od.pizza_id=p.pizza_id
+JOIN pizza_types pt ON p.pizza_type_id=pt.pizza_type_id
+GROUP BY name
+ORDER BY TotalPizzasSold ASC
+
+
+		
+```
