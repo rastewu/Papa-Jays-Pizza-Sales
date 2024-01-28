@@ -99,9 +99,10 @@ FROM Pizza_Sales..orders
 --pizzas sold/number of pizzas
 SELECT SUM(Quantity)/COUNT(DISTINCT order_id) AS [Average Pizzas Per Order]
 FROM Pizza_Sales..order_details
+```
 
-
---QUESTIONS TO ANSWER
+### QUESTIONS TO ANSWER
+```sql
 --1) Daily Trends for Total Orders
 --select * from Pizza_Sales..orders
 SELECT FORMAT(date, 'ddd') AS DayOfWeek, COUNT(DISTINCT order_id) AS  Total_Orders 
@@ -178,7 +179,5 @@ JOIN pizzas p ON od.pizza_id=p.pizza_id
 JOIN pizza_types pt ON p.pizza_type_id=pt.pizza_type_id
 GROUP BY name
 ORDER BY TotalPizzasSold ASC
-
-
 		
 ```
