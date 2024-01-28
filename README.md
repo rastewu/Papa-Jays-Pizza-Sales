@@ -7,6 +7,12 @@ The analysis was conducted using Microsoft SQL Server, ensuring robust data mana
 
 ### Data Visualization
 Data visualization was performed using Microsoft Power BI.
+![Power BI Dashboard - Home Page](https://github.com/rastewu/Papa-Jays-Pizza-Sales/assets/157243480/c4fa4c97-f4c7-42b5-afe6-112ed4af3706)
+
+
+
+
+
 
 
 ### Data Sources
