@@ -3,6 +3,7 @@
 ### Project Overview
 This project is based on a comprehensive dataset, encapsulated in four CSV files, which details a full year of sales activity for a pizza outlet named Papa Jays Pizza, located in Baltimore County, Maryland. The primary objective of this analysis is to derive actionable insights that will aid in strategic decision-making to augment sales and enhance business operations.
 The analysis was conducted using Microsoft SQL Server, ensuring robust data management and manipulation. The data is meticulously organized into four distinct tables. Throughout this project, a variety of SQL techniques were employed, including the implementation of elementary joins and sub-queries. The findings and visualizations are presented through Power BI, offering an intuitive and interactive representation of key metrics and trends relevant to the pizza outlet’s performance.
+ 
 ---
 
 ### Data Visualization
