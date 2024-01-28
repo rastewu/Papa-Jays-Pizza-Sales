@@ -210,7 +210,7 @@ ORDER BY TotalPizzasSold ASC
 6. The top 5 best selling pizzas are The Classic Deluxe, The Barbecue Chicken Pizza, The Hawaiian Pizza, The Pepperoni Pizza & finally the That Chicken Pizza.
 7. The 5 worst selling pizza are Sppresatta, The Spinach Supreme, The Calabrese, The Mediterranean and the Brie Carrie.
 
-### Answers to Questions
+### Conclusion
  - XL & XXL pizzas account for such a small proportion of sales hence it is recommended to get rid of these pizza sizes.
  - Even though Brie Carrie recorded the lowest selling pizza, it sold about 490 pieces which is not a bad idea to still keep it on the menu.  
    
