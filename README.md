@@ -191,3 +191,26 @@ GROUP BY name
 ORDER BY TotalPizzasSold ASC
 		
 ```
+
+
+### Findings
+### KPIs
+1. Total Revenue for the year was $817,860
+2. Average order value was $38.31
+3. Total Pizzas sold for the year - 50,000
+4. total orders - 21,000
+5. Average Pizzas per order - 2
+
+### Answers to Questions
+1. The busiest days are Thursday (3.2K orders), Fridays(3.5K orders and Saturdays(3.2K orders) with the most sales recorded on Fridays.
+2. Most orders are placed between 12pm-1pm & 5pm-6pm
+3. Classic Pizza has the highest percent of total sales(26.6%), followed by Supreme(25.46%), Chicken (23.96%) and finally Veggie (23.68%).
+4. Large size pizzas recorded the highest percent of sales (45.89%) followed by Medium (30.49%), Small(21.77%) and finally XL(1.72%).
+5. Classic pizza recorded the highest sales at 14,888, followed by Supreme (11,987), Veggie(11,649)  and finally Chicken(11,050).
+6. The top 5 best selling pizzas are The Classic Deluxe, The Barbecue Chicken Pizza, The Hawaiian Pizza, The Pepperoni Pizza & finally the That Chicken Pizza.
+7. The 5 worst selling pizza are Sppresatta, The Spinach Supreme, The Calabrese, The Mediterranean and the Brie Carrie.
+
+### Answers to Questions
+ - XL & XXL pizzas account for such a small proportion of sales hence it is recommended to get rid of these pizza sizes.
+ - Even though Brie Carrie recorded the lowest selling pizza, it sold about 490 pieces which is not a bad idea to still keep it on the menu.  
+   
